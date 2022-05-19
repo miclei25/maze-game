@@ -11,7 +11,7 @@ class Maze {
     }
 
     createMaze() {
-        new Array(length)
+        let maze = new Array(length);
     }
 
 }
