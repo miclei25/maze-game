@@ -1,5 +1,7 @@
 html {
     background-color: #8eda79;
+    font-family: 'Skranji', cursive;
+    
 }
 body {
     width: 800px;
@@ -14,6 +16,10 @@ p {
 h1 {
     text-align: center;
     font-size: 60px;
+}
+
+h2{ 
+    text-align: center; 
 }
 button {
     text-align: center;
