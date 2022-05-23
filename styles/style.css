@@ -12,33 +12,8 @@ p {
     text-align: center;
 }
 h1 {
-<<<<<<< HEAD
-    font-size: 60px;
-
-}
-.bold {
-    font-weight: bold;
-}
-p.bold {
-    text-decoration:underline;
-}
-li.bold {
-    font-style: italic;
-}
-#subjectintro {
-    color: rgb(106, 236, 193);
-}
-.block {margin: 10px;
-    display: block;
-    width: 50%;
-    border: none;
-    padding: 28px;
-    font-size: 16px;
-    cursor: pointer;
-=======
->>>>>>> 9d9bc30793126dfa4c2fd27c9445896264e6b906
     text-align: center;
-    font-size: 60px
+    font-size: 60px;
 }
 button {
     text-align: center;
