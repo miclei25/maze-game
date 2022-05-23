@@ -15,3 +15,7 @@ class Maze {
     }
 
 }
+
+class Player {
+    
+}
