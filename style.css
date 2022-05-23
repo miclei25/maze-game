@@ -27,9 +27,9 @@ li.bold {
 }
 .block {margin: 10px;
     display: block;
-    width: 100%;
+    width: 50%;
     border: none;
-    padding: 14px 28px;
+    padding: 28px;
     font-size: 16px;
     cursor: pointer;
     text-align: center;
