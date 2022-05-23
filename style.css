@@ -1,1 +1,36 @@
-html 
+html {
+    background-color: #8eda79;
+}
+body {
+    width: 800px;
+    margin: 0 auto;
+}
+p, li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+h1 {
+    font-size: 60px;
+}
+.bold {
+    font-weight: bold;
+}
+p.bold {
+    text-decoration:underline;
+}
+li.bold {
+    font-style: italic;
+}
+#subjectintro {
+    color: rgb(106, 236, 193);
+}
+.block {margin: 10px;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+ }
