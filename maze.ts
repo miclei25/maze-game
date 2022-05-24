@@ -42,7 +42,7 @@ class Maze {
 let m = new Maze(5, 7)
 m.createMaze()
 
-class Actor extends Maze {
+class actor extends Maze {
 
 
 
@@ -53,6 +53,6 @@ class Actor extends Maze {
     }
 }
 
-class Player extends Actor {
+class player extends actor {
     
 }
