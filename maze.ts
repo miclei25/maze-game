@@ -42,14 +42,14 @@ class Maze {
 let m = new Maze(5, 7)
 m.createMaze()
 
-class Actor{
+class Actor extends Maze {
 
-    x : number;
-    y : number;
 
-    constructor(x: number, y : number) {
-        this.x = x;
-        this.y = y;
+
+    position() {
+        let position = 0;
+
+        
     }
 }
 
