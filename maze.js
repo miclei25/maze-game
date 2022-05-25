@@ -17,8 +17,12 @@ class Maze {
             maze[0][k] = "wall";
             maze[this.length - 1][k] = "wall";
         }
+        for (let k = 1; k < this.length - 1; k += 2) {
+            maze[k][0] = "wall";
+            maze[k][this.width - 1] = "wall";
+        }
         // console.log(`after second loop: ${maze}`)
-        for (let a = 1; a < this.length - 1; a += 2) {
+        for (let a = 2; a < this.length - 2; a += 2) {
             for (let b = 0; b < this.width; b += 2) {
                 maze[a][b] = "wall";
             }
@@ -27,19 +31,11 @@ class Maze {
         maze[0][this.width - 1] = "EXIT";
         maze[this.length - 1][0] = "ENTER";
         ////////////////////////////////////////////////
-        console.log(`after everything: ${maze}`);
+        console.log("after everything:" + maze);
         for (let x = 0; x < this.length; x++) {
-            console.log(`each row after everything: ${maze[x]}`);
+            console.log("each row after everything:" + maze[x]);
         }
     }
 }
 let m = new Maze(5, 7);
 m.createMaze();
-class Actor {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-class Player extends Actor {
-}
