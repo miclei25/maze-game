@@ -41,18 +41,3 @@ class Maze {
 
 let m = new Maze(5, 7)
 m.createMaze()
-
-class actor extends Maze {
-
-
-
-    position() {
-        let position = 0;
-
-        
-    }
-}
-
-class player extends actor {
-    
-}

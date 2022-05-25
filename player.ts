@@ -7,6 +7,12 @@ class Actor{
         this.x = x;
         this.y = y;
     }
+
+    position() {
+        let position = 0;
+
+        
+    }
 }
 
 class Player extends Actor {
