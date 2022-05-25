@@ -1,6 +1,5 @@
 let canvas = document.querySelector("canvas") as HTMLCanvasElement;
 let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
-
 class Actor {
 
     x : number;
@@ -17,11 +16,11 @@ class Actor {
         ctx.closePath();
         ctx.fill();
     }
-    
+
     position() {
+
         let position = 0;
 
-        
     }
 }
 
