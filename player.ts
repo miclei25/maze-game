@@ -16,6 +16,10 @@ class Actor{
         ctx.arc(this.x,this.y,10, 0 , Math.PI * 2);
         ctx.closePath();
         ctx.fill();
+    position() {
+        let position = 0;
+
+        
     }
 }
 
