@@ -17,7 +17,7 @@ function timeToString(time : number) : string {
   
     return `${formattedMM}:${formattedSS}:${formattedMS}`;
   }
-  //^^ mr wang says this part above is great to use for our sto watch
+  //^^ mr wang says this part above is great to use for our stop watch
 
 
   // Declare variables to use in our functions below

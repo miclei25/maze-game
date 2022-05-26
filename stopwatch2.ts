@@ -1,4 +1,15 @@
-function timeToString(time : number) : string {
+
+class Stopwatch {
+  beginTime : number 
+  endTime : number;
+  
+   
+  constructor() {
+    this.beginTime = 0;
+    this.endTime = 0;
+  }
+
+  timeToString(time :number) : string {
     let diffInHrs = time / 3600000;
     let hh = Math.floor(diffInHrs);
   
@@ -18,4 +29,19 @@ function timeToString(time : number) : string {
     return `${formattedMM}:${formattedSS}:${formattedMS}`;
   }
 
-  // this part works lol
+  start(){
+    this.beginTime = Date.now();
+    = setInterval(this.getTime, 1000)
+  }
+  
+
+  stop(){
+
+  }
+
+  getTime() {
+    elapsedTime = Date.now() - this.beginTime;
+    (document.getElementById("display") as HTMLElement).textContent = this.timeToString(elapsedTime);
+  }
+}
+  
