@@ -5,10 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maze Game!</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            background-color: #8eda79;
+        }
+    </style>
 </head>
 <body>
     <p>This is our Maze!</p>
+    <p id="display">00:00:00</p>
+    <canvas height="500" width="500"></canvas>
     <script src="maze.js"></script>
+    <script src="player.js"></script>
+    <script src="stopwatch2.js"></script>
+    <script src="arrow_keys.js"></script>
+    <script src="eventlisteners.js"></script>
     <a href="opening.html">
         <button>Back to home screen :D</button>
     </a>

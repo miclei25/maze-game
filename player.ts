@@ -17,7 +17,7 @@ class Actor {
         ctx.fill();
     }
 
-    position() {
+    update() : void {
 
         let position = 0;
 
@@ -26,4 +26,33 @@ class Actor {
 
 class Player extends Actor {
     
+    xVel : number;
+    yVel : number;
+
+    constructor(x : number, y : number) {
+        super(x,y);
+        this.xVel = 0;
+        this.yVel = 0;
+    }
+
+    moveLeft() : void {
+        this.xVel = -5;
+    }
+
+    moveRight() : void {
+        this.xVel = 5;
+    }
+
+    moveUp() : void {
+        this.yVel = 5;
+    }
+
+    moveDown() : void {
+        this.yVel = -5;
+    }
+
+    update() : void {
+        this.x += this.xVel;
+        this.y += this.yVel;
+    }
 }
