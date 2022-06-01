@@ -3,7 +3,6 @@ class Stopwatch {
   beginTime : number 
   endTime : number;
   
-   
   constructor() {
     this.beginTime = 0;
     this.endTime = 0;
@@ -31,12 +30,12 @@ class Stopwatch {
 
   start(){
     this.beginTime = Date.now();
-    = setInterval(this.getTime, 1000)
+    this.beginTime = setInterval(this.getTime, 1000)
   }
-  
 
   stop(){
-
+    this.endTime = Date.now();
+    this.endTime = setInterval(this.getTime, 1000)
   }
 
   getTime() {
@@ -44,4 +43,3 @@ class Stopwatch {
     (document.getElementById("display") as HTMLElement).textContent = this.timeToString(elapsedTime);
   }
 }
-  
