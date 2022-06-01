@@ -36,6 +36,8 @@ class Stopwatch {
   
 
   stop(){
+    this.endTime = Date.now(): 
+    
 
   }
 
