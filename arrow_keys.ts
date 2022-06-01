@@ -18,6 +18,7 @@ function startstopwatch() {
 
 document.onkeydown = checkKey;
 function checkKey(e : KeyboardEvent) {
+    console.log ("hey we are calling this function")
 
     e = e || window.event;
     let start : boolean = false
