@@ -34,14 +34,8 @@ class Stopwatch {
   }
 
   stop(){
-<<<<<<< HEAD
-    this.endTime = Date.now(): 
-    
-
-=======
     this.endTime = Date.now();
     this.endTime = setInterval(this.getTime, 1000)
->>>>>>> 7c6b1d763f17a400fd5248ebe977f6b8ad7b45b1
   }
 
   getTime() {
