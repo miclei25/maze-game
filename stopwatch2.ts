@@ -39,7 +39,7 @@ class Stopwatch {
   }
 
   getTime() {
-    elapsedTime = Date.now() - this.beginTime;
+    let elapsedTime : number = Date.now() - this.beginTime;
     (document.getElementById("display") as HTMLElement).textContent = this.timeToString(elapsedTime);
   }
 }
