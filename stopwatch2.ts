@@ -3,7 +3,6 @@ class Stopwatch {
   beginTime : number 
   endTime : number;
   
-   
   constructor() {
     this.beginTime = 0;
     this.endTime = 0;
@@ -22,28 +21,31 @@ class Stopwatch {
     let diffInMs = (diffInSec - ss) * 100;
     let ms = Math.floor(diffInMs);
   
-    let formattedMM = mm.toString().padStart(2, "0");
-    let formattedSS = ss.toString().padStart(2, "0");
-    let formattedMS = ms.toString().padStart(2, "0");
+    let formattedMM = mm.toString() //.padStart(2, "0");
+    let formattedSS = ss.toString() //.padStart(2, "0");
+    let formattedMS = ms.toString() //.padStart(2, "0");
   
     return `${formattedMM}:${formattedSS}:${formattedMS}`;
   }
 
   start(){
     this.beginTime = Date.now();
-    = setInterval(this.getTime, 1000)
+    this.beginTime = setInterval(this.getTime, 1000)
   }
-  
 
   stop(){
+<<<<<<< HEAD
     this.endTime = Date.now(): 
     
 
+=======
+    this.endTime = Date.now();
+    this.endTime = setInterval(this.getTime, 1000)
+>>>>>>> 7c6b1d763f17a400fd5248ebe977f6b8ad7b45b1
   }
 
   getTime() {
-    elapsedTime = Date.now() - this.beginTime;
+    let elapsedTime : number = Date.now() - this.beginTime;
     (document.getElementById("display") as HTMLElement).textContent = this.timeToString(elapsedTime);
   }
 }
-  

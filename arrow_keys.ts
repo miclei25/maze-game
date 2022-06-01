@@ -1,9 +1,10 @@
 //make into a function and call this function when one of the arrow keys are pressed
 
-function stopwatch() {
+function startstopwatch() {
     const stopwatch = new Stopwatch();
  
     stopwatch.start();
+    
 
     // (amount of time the stopwatch has been running)
 }
@@ -17,15 +18,17 @@ function stopwatch() {
 
 document.onkeydown = checkKey;
 function checkKey(e : KeyboardEvent) {
+    console.log ("hey we are calling this function")
 
     e = e || window.event;
     let start : boolean = false
 
     // if (e.keyCode == '37' || e.keyCode == '38' || e.keyCode == '39' || e.keyCode == '40') {
-    if (e.key == 'Left' || e.key == 'Up' || e.key == 'Right' || e.key == 'Down') {
-        if (start = false) {
+    if (e.key == 'LeftArrow' || e.key == 'UpArrow' || e.key == 'RightArrow' || e.key == 'DownArrow') {
+        console.log ("hey we made it here")
+        if (start === false) {
             start = true
-            stopwatch()
+            startstopwatch()
         }
         // call moving function once it exists
     }

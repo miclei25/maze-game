@@ -1,0 +1,29 @@
+// ignore this! i'm just dumping code that i may need later here
+
+        // option 1 of randomizing inner walls; not completed
+        // makes a wall every other cell and every other row
+        // then have to generate walls between them
+        for (let a = 2; a < this.length - 2; a += 2) {
+            for (let b = 0;  b < this.width; b += 2) {
+                maze[a][b] = "wall";
+            }
+        }
+
+        // option 2 of randomizing inner walls; not completed - recursive division
+        // divides cell with two walls, then makes a hole in each wall
+        // repeat with each chamber until everything is full
+        let xy = this.randomPoint();
+        let holes = this.randomPoint();
+        for (let a = 0; a < this.width; a++) {
+            maze[xy[1]][a] = "wall";
+        }
+        for (let b = 0; b < this.length; b++) {
+            maze[b][xy[0]] = "wall";
+        }
+        maze[xy[1]][holes[0]] = undefined;
+        maze[holes[1]][xy[0]] = undefined;
+
+        // option 3 of randomizing inner walls; not completed - prim's algorithm
+        // like a tree, where it grows outward from one point
+        // branch outward by picking a random surrounding point of a given point as a wall
+        let prims = this.randomPoint()
