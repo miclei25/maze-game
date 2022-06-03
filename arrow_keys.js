@@ -17,7 +17,7 @@ function checkKey(e) {
     e = e || window.event;
     let start = false;
     // if (e.keyCode == '37' || e.keyCode == '38' || e.keyCode == '39' || e.keyCode == '40') {
-    if (e.key == 'LeftArrow' || e.key == 'UpArrow' || e.key == 'RightArrow' || e.key == 'DownArrow') {
+    if (e.key == 'ArrowLeft' || e.key == 'ArrowUp' || e.key == 'ArrowRight' || e.key == 'ArrowDown') {
         console.log("hey we made it here");
         if (start === false) {
             start = true;
