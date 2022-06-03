@@ -42,33 +42,40 @@ class Maze {
 
         let start = this.randomPoint(toBeWall);
         maze[start[0]][start[1]] = "wall";
+        this.carve_passages_from(0, 0, maze)
+        
+        }
+
+    carve_passages_from(cx : number, cy : number, maze : any[][]) {
         const N =  2;
         const S = -2;
         const E =  2;
         const W = -2;
-        let directions = [N, S, E, W].sort() // algorithm to sort randomly if time
+        let directions = [N, S, E, W] // algorithm to sort randomly if time
         for (let d of directions) {
 
-            let nx = start[0]
-            let ny = start[1]
+            let nx = cx;
+            let ny = cy;
             if (d == E || d == W) {
-                nx += d
+                nx += d;
             } else {
-                ny += d
+                ny += d;
             }
-
+    
             if (ny > 0 && ny < this.length - 1  && nx > 0 && nx < this.length && maze[nx][ny] !== "wall") {
-
+                maze[cy][cx] |= d;
+                if (d == N) {
+                    maze[ny][nx] |= S;
+                } else if (d == S) {
+                    maze[ny][nx] |= N;
+                } else if (d == E) {
+                        maze[ny][nx] |= W;
+                } else {
+                    maze[ny][nx] |= E;
+                }
+                this.carve_passages_from(nx, ny, maze)
             }
-
-            // nx, ny = cx + DX[direction], cy + DY[direction]
-
-            // if ny.between?(0, grid.length-1) && nx.between?(0, grid[ny].length-1) && grid[ny][nx] == 0
-            //     grid[cy][cx] |= direction
-            //     grid[ny][nx] |= OPPOSITE[direction]
-            //     carve_passages_from(nx, ny, grid)
-        };
-
+        }
     }
 
     randomPoint(toBeWall : boolean) {
