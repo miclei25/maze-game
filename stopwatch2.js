@@ -3,8 +3,10 @@ class Stopwatch {
     constructor() {
         this.beginTime = 0;
         this.endTime = 0;
+        this.savedInterval = 0;
     }
     timeToString(time) {
+        console.log(time);
         let diffInHrs = time / 3600000;
         let hh = Math.floor(diffInHrs);
         let diffInMin = (diffInHrs - hh) * 60;
@@ -20,11 +22,13 @@ class Stopwatch {
     }
     start() {
         this.beginTime = Date.now();
-        this.beginTime = setInterval(this.getTime, 1000);
+        this.savedInterval = setInterval(() => {
+            this.getTime();
+        }, 95);
     }
     stop() {
         this.endTime = Date.now();
-        this.endTime = setInterval(this.getTime, 1000);
+        clearInterval(this.savedInterval);
     }
     getTime() {
         let elapsedTime = Date.now() - this.beginTime;
