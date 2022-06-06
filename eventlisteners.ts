@@ -6,5 +6,10 @@ document.addEventListener("keydown", function(event: KeyboardEvent){
         player.moveLeft();
     if (event.key === "ArrowRight")
         player.moveRight();
+    if (event.key === "ArrowUp")
+        player.moveUp();
+    if (event.key === "ArrowDown")
+        player.moveDown();
         
 });
+
