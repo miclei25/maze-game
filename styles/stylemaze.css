@@ -8,7 +8,9 @@ p {
     line-height: 2;
     letter-spacing: 1px;
     text-align: center;
+    color: white
 }
+
 
 canvas {
     border: 1px solid black;

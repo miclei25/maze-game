@@ -32,6 +32,6 @@ class Stopwatch {
     }
     getTime() {
         let elapsedTime = Date.now() - this.beginTime;
-        document.getElementById("display").textContent = this.timeToString(elapsedTime);
+        document.getElementById("displayTimer").textContent = this.timeToString(elapsedTime);
     }
 }
