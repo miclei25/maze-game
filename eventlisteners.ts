@@ -1,5 +1,6 @@
 let player : Player = new Player(canvas.width / 2, canvas.height - 20);
 
+actorList.addActor(player)
 
 document.addEventListener("keydown", function(event: KeyboardEvent){
     if (event.key === "ArrowLeft")
