@@ -1,5 +1,3 @@
-let canvas = document.querySelector("canvas") as HTMLCanvasElement;
-let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 class Actor {
 
     x : number;
@@ -44,11 +42,11 @@ class Player extends Actor {
     }
 
     moveUp() : void {
-        this.yVel = 5;
+        this.yVel = -5;
     }
 
     moveDown() : void {
-        this.yVel = -5;
+        this.yVel = 5;
     }
 
     update() : void {
