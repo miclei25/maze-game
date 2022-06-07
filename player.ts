@@ -42,11 +42,11 @@ class Player extends Actor {
     }
 
     moveUp() : void {
-        this.yVel = 5;
+        this.yVel = -5;
     }
 
     moveDown() : void {
-        this.yVel = -5;
+        this.yVel = 5;
     }
 
     update() : void {
