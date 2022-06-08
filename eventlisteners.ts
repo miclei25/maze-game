@@ -1,3 +1,5 @@
+
+
 let player : Player = new Player(canvas.width / 2, canvas.height - 20);
 
 actorList.addActor(player)
@@ -15,6 +17,7 @@ document.addEventListener("keydown", function(event: KeyboardEvent){
         
 });
 
+<<<<<<< HEAD
 // document.addEventListener("keyup", function(event: KeyboardEvent)){
 //     event.preventDefault()
 //     let elm = document.querySelector(`${event.key}`) as HTMLElement | null
@@ -31,3 +34,10 @@ document.addEventListener("keydown", function(event: KeyboardEvent){
 //     }
 //     elm.classList.remove("keypress");
 // })
+=======
+document.addEventListener("keyup", function(event : KeyboardEvent)
+    
+
+);
+
+>>>>>>> 5a4f79a7dbac6c4cd18ca130bf9877d99d692547
