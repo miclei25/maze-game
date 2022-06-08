@@ -1,6 +1,4 @@
 "use strict";
-let canvas = document.querySelector("canvas");
-let ctx = canvas.getContext("2d");
 class Actor {
     constructor(x, y) {
         this.x = x;
@@ -29,10 +27,10 @@ class Player extends Actor {
         this.xVel = 5;
     }
     moveUp() {
-        this.yVel = 5;
+        this.yVel = -5;
     }
     moveDown() {
-        this.yVel = -5;
+        this.yVel = 5;
     }
     update() {
         this.x += this.xVel;
@@ -42,8 +40,9 @@ class Player extends Actor {
         ctx.beginPath();
         ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
         ctx.closePath();
-        ctx.fillStyle = 'rgba (255, 0, 0, 1)';
-        ctx.rect(10, 10, 50, 50);
         ctx.fill();
+        ctx.fillStyle = 'rgba (255, 0, 0, 1)';
+        // ctx.rect(10, 10, 50, 50)
+        // ctx.fill();
     }
 }

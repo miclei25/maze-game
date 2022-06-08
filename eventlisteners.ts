@@ -15,7 +15,7 @@ document.addEventListener("keydown", function(event: KeyboardEvent){
         
 });
 
-document.addEventListener("keyup", function(event : KeyboardEvent)
+document.addEventListener("keyup", function(event : KeyboardEvent){}
     
 
 );
