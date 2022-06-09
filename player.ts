@@ -58,10 +58,6 @@ class Player extends Actor {
         ctx.beginPath();
         ctx.arc(this.x,this.y,10, 0 , Math.PI * 2);
         ctx.closePath();
-<<<<<<< HEAD
-        ctx.fillStyle = 'rgba(5, 5, 5, 1)'
-=======
->>>>>>> 7714010fbe4843c75dad89d15dafe042072e108e
         ctx.fill();
         ctx.fillStyle = 'rgba (255, 0, 0, 1)'
         // ctx.rect(10, 10, 50, 50)
