@@ -1,5 +1,3 @@
-let canvas = document.querySelector("canvas") as HTMLCanvasElement;
-let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 class Actor {
 
     x : number;
@@ -18,8 +16,6 @@ class Actor {
     }
 
     update() : void {
-
-        let position = 0;
 
     }
 }
@@ -44,15 +40,37 @@ class Player extends Actor {
     }
 
     moveUp() : void {
-        this.yVel = 5;
+        this.yVel = -5;
     }
 
     moveDown() : void {
-        this.yVel = -5;
+        this.yVel = 5;
     }
 
     update() : void {
         this.x += this.xVel;
         this.y += this.yVel;
+        
+        if (this.y > canvas.height - 10){
+            actorList.removeActor(this);
+        }
+        if (this.x > canvas.width - 10) {
+            actorList.removeActor(this);
+        }
+    }
+
+    draw() : void {
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,10, 0 , Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = 'rgba (255, 0, 0, 1)'
+        // ctx.rect(10, 10, 50, 50)
+        // ctx.fill();
+    }
+    
+    stop() : void{
+        this.xVel = 0;
+        this.yVel = 0;
     }
 }

@@ -11,15 +11,13 @@ function startstopwatch() {
 //     playSound(clickedElm.dataset.sound as string)
 // }
 // i think this is for things clicked on the screen but i may be wrong
+let start = false;
 document.onkeydown = checkKey;
 function checkKey(e) {
-    console.log("hey we are calling this function");
     e = e || window.event;
-    let start = false;
-    // if (e.keyCode == '37' || e.keyCode == '38' || e.keyCode == '39' || e.keyCode == '40') {
-    if (e.key == 'ArrowLeft' || e.key == 'ArrowUp' || e.key == 'ArrowRight' || e.key == 'ArrowDown') {
-        console.log("hey we made it here");
-        if (start === false) {
+    if (start === false) {
+        // if (e.keyCode == '37' || e.keyCode == '38' || e.keyCode == '39' || e.keyCode == '40') {
+        if (e.key == 'ArrowLeft' || e.key == 'ArrowUp' || e.key == 'ArrowRight' || e.key == 'ArrowDown') {
             start = true;
             startstopwatch();
         }
