@@ -45,4 +45,8 @@ class Player extends Actor {
         // ctx.rect(10, 10, 50, 50)
         // ctx.fill();
     }
+    stop() {
+        this.xVel = 0;
+        this.yVel = 0;
+    }
 }

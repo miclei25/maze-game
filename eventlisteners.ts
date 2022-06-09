@@ -17,25 +17,15 @@ document.addEventListener("keydown", function(event: KeyboardEvent){
         
 });
 
-// document.addEventListener("keyup", function(event: KeyboardEvent)){
-//     event.preventDefault()
-//     let elm = document.querySelector(`${event.key}`) as HTMLElement | null
-//     if (!elm) {
-//         return;
-//     }
-//     elm.classList.remove("player");
-// }
-
-// document.addEventListener("keyup", (event: KeyboardEvent) => {
-//     let elm = document.querySelector(`.coin[data-letter='${event.key.toLowerCase()}']`) as HTMLElement | null
-//     if (!elm){ //elm === null
-//         return;
-//     }
-//     elm.classList.remove("keypress");
-// })
-
-document.addEventListener("keyup", function(event : KeyboardEvent)
-
-document.addEventListener("keyup", function(event : KeyboardEvent){}
-
-);
+document.addEventListener("keyup", (event : KeyboardEvent) => {
+    event.preventDefault();
+    if (event.key === "ArrowLeft")
+        player.stop();
+    if (event.key === "ArrowRight")
+        player.stop();
+    if (event.key === "ArrowUp")
+        player.stop();
+    if (event.key === "ArrowDown")
+        player.stop();
+        
+});
