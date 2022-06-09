@@ -84,9 +84,18 @@ class Maze {
         return [x, y];
     }
     printEverything() {
-        console.log("after everything:" + this.maze);
+        console.log("__".repeat(this.width));
         for (let x = 0; x < this.length; x++) {
-            console.log("each row after everything:" + this.maze[x]);
+            let rowX = "";
+            for (let y = 0; y < this.width; y++) {
+                if (this.maze[x][y] == "wall") {
+                    rowX += "| ";
+                }
+                else {
+                    rowX += "__";
+                }
+            }
+            console.log(`${rowX}\n`);
         }
     }
 }
