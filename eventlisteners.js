@@ -12,15 +12,4 @@ document.addEventListener("keydown", function (event) {
     if (event.key === "ArrowDown")
         player.moveDown();
 });
-<<<<<<< HEAD
-// document.addEventListener("keyup", function(event: KeyboardEvent)){
-//     event.preventDefault()
-//     let elm = document.querySelector(`${event.key}`) as HTMLElement | null
-//     if (!elm) {
-//         return;
-//     }
-//     elm.classList.remove("player");
-// }
-=======
-document.addEventListener("keyup", function (event) { });
->>>>>>> 7714010fbe4843c75dad89d15dafe042072e108e
+;

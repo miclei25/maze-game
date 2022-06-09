@@ -5,7 +5,6 @@ const FRAME_LENGTH = 30;
 const actorList = new ActorList();
 //Draw ~ 30 times a second
 let drawIntervalId = window.setInterval(draw, FRAME_LENGTH);
-<<<<<<< HEAD
 // let canvas = document.getElementById('canvas');
 // let ctx = canvas.getContext('2d');
 function NewImage() {
@@ -19,8 +18,6 @@ function NewImage() {
     console.log("We made it here");
     NewImage();
 }
-=======
->>>>>>> 7714010fbe4843c75dad89d15dafe042072e108e
 function draw() {
     // Clear the stage!
     ctx.clearRect(0, 0, canvas.width, canvas.height);
