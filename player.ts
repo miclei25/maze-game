@@ -65,4 +65,7 @@ class Player extends Actor {
         // ctx.fill();
     }
     
-}
+    stop() : void{
+        this.xVel = 0;
+        this.yVel = 0;
+}}
