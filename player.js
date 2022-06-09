@@ -1,54 +1,37 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Actor = /** @class */ (function () {
-    function Actor(x, y) {
+"use strict";
+class Actor {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
     }
-    Actor.prototype.draw = function () {
+    draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();
-    };
-    Actor.prototype.update = function () {
-    };
-    return Actor;
-}());
-var Player = /** @class */ (function (_super) {
-    __extends(Player, _super);
-    function Player(x, y) {
-        var _this = _super.call(this, x, y) || this;
-        _this.xVel = 0;
-        _this.yVel = 0;
-        return _this;
     }
-    Player.prototype.moveLeft = function () {
+    update() {
+    }
+}
+class Player extends Actor {
+    constructor(x, y) {
+        super(x, y);
+        this.xVel = 0;
+        this.yVel = 0;
+    }
+    moveLeft() {
         this.xVel = -5;
-    };
-    Player.prototype.moveRight = function () {
+    }
+    moveRight() {
         this.xVel = 5;
-    };
-    Player.prototype.moveUp = function () {
+    }
+    moveUp() {
         this.yVel = -5;
-    };
-    Player.prototype.moveDown = function () {
+    }
+    moveDown() {
         this.yVel = 5;
-    };
-    Player.prototype.update = function () {
+    }
+    update() {
         this.x += this.xVel;
         this.y += this.yVel;
         if (this.y > canvas.height - 10) {
@@ -57,8 +40,8 @@ var Player = /** @class */ (function (_super) {
         if (this.x > canvas.width - 10) {
             actorList.removeActor(this);
         }
-    };
-    Player.prototype.draw = function () {
+    }
+    draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
         ctx.closePath();
