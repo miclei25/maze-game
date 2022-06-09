@@ -1,4 +1,4 @@
-console.log("Hi! This is our this.maze... it'll be here soon!")
+console.log("Hi! This is our maze... it'll be here soon!")
 
 class Maze {
 
@@ -96,9 +96,17 @@ class Maze {
     }
 
     printEverything() {
-        console.log("after everything:" + this.maze)
+        console.log("__".repeat(this.width));
         for (let x = 0; x < this.length; x++) {
-            console.log("each row after everything:" + this.maze[x]);
+            let rowX : string = ""
+            for (let y = 0; y < this.width; y++) {
+                if (this.maze[x][y] == "wall") {
+                    rowX += "| ";
+                } else {
+                    rowX += "__";
+                }
+            }
+            console.log(`${rowX}\n`);
         }
     }
 
