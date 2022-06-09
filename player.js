@@ -66,6 +66,9 @@ var Player = /** @class */ (function (_super) {
         ctx.fillStyle = 'rgba (255, 0, 0, 1)';
         // ctx.rect(10, 10, 50, 50)
         // ctx.fill();
-    };
-    return Player;
-}(Actor));
+    }
+    stop() {
+        this.xVel = 0;
+        this.yVel = 0;
+    }
+}
