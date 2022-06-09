@@ -51,10 +51,7 @@ var Player = /** @class */ (function (_super) {
     Player.prototype.update = function () {
         this.x += this.xVel;
         this.y += this.yVel;
-        if (this.y > canvas.height - 10) {
-            actorList.removeActor(this);
-        }
-        if (this.x > canvas.width - 10) {
+        if (this.y > canvas.height + 50) {
             actorList.removeActor(this);
         }
     };
@@ -66,9 +63,6 @@ var Player = /** @class */ (function (_super) {
         ctx.fillStyle = 'rgba (255, 0, 0, 1)';
         // ctx.rect(10, 10, 50, 50)
         // ctx.fill();
-    }
-    stop() {
-        this.xVel = 0;
-        this.yVel = 0;
-    }
-}
+    };
+    return Player;
+}(Actor));

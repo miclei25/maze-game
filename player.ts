@@ -50,11 +50,7 @@ class Player extends Actor {
     update() : void {
         this.x += this.xVel;
         this.y += this.yVel;
-        
-        if (this.y > canvas.height - 10){
-            actorList.removeActor(this);
-        }
-        if (this.x > canvas.width - 10) {
+        if (this.y > canvas.height + 50){
             actorList.removeActor(this);
         }
     }
@@ -69,8 +65,4 @@ class Player extends Actor {
         // ctx.fill();
     }
     
-    stop() : void{
-        this.xVel = 0;
-        this.yVel = 0;
-    }
 }
