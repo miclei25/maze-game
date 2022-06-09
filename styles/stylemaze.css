@@ -22,6 +22,15 @@ canvas {
 
 }
 
+img {
+    border: 1px solid black;
+    background-color: #99a74c;
+    width: 600px; 
+    height: 600px;
+    margin: 0 auto; 
+    display: block; 
+}
+
 h1 { 
     text-align: center;
     font-size: 40px;

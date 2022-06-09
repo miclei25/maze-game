@@ -13,7 +13,7 @@ function NewImage() {
     // When it loads
     newImage.onload = () => {
         // Draw the image onto the context
-        ctx.drawImage(newImage, 10, 10, 250, 208);
+        ctx.drawImage(newImage, 1000, 100, 250, 208);
     };
     console.log("We made it here");
     NewImage();
