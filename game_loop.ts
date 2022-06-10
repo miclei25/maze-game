@@ -10,22 +10,14 @@ let drawIntervalId : number | undefined = window.setInterval(draw, FRAME_LENGTH)
 // let canvas = document.getElementById('canvas');
 // let ctx = canvas.getContext('2d');
 
-function NewImage(){
     let newImage = new Image();
-    newImage.src = 'grassfloor.jpeg'
-    
-    // When it loads
-    newImage.onload = () => {
-        // Draw the image onto the context
-        ctx.drawImage(newImage,10, 10, 250, 208);
-    }
-    console.log("We made it here")
-    NewImage()
-}
+    newImage.src = 'grass.png'
+
 
 function draw(){
     // Clear the stage!
     ctx.clearRect(0,0,canvas.width, canvas.height);
+    ctx.drawImage(newImage,0, 0, 500, 500);
 
     // Re-draw all the actors!
     for (const actor of actorList.actors){

@@ -1,5 +1,5 @@
 "use strict";
-console.log("Hi! This is our this.maze... it'll be here soon!");
+console.log("Hi! This is our maze... it'll be here soon!");
 class Maze {
     constructor(length, width) {
         this.length = length;
