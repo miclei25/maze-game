@@ -11,10 +11,15 @@ let drawIntervalId : number | undefined = window.setInterval(draw, FRAME_LENGTH)
 // let ctx = canvas.getContext('2d');
 
 let newImage = new Image();
-newImage.src = 'grass.png'
+newImage.src = 'images/grass.png'
     
 let wallImage = new Image();
-wallImage.src = 'cobblestone.png'
+wallImage.src = 'images/cobblestone.png'
+
+// these two are both hardcoded rn - but we should make an input box or something where the player can input
+let givenLength = 5;
+let givenWidth = 7;
+
 let maze : Maze = new Maze(2 * givenLength + 1, 2 * givenWidth + 1);
 maze.createMaze();
 draw();
@@ -23,9 +28,10 @@ draw();
 function draw(){
     // Clear the stage!
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    ctx.drawImage(newImage,0, 0, canvas.width , canvas.height );
-    m.drawEverything()
-    
+    maze.drawEverything();
+    // ctx.drawImage(newImage, 0, 0, canvas.width / maze.width, canvas.height / maze.length);
+    // ctx.drawImage(wallImage, 200, 200, canvas.width / maze.width, canvas.height / maze.length);
+    // Re-draw all the actors!
     for (const actor of actorList.actors){
         actor.draw();
     }

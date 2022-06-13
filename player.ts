@@ -80,7 +80,7 @@ class Player extends Actor {
     }
     
     preventcrossing() : void {
-        let pos = m.checkForWall(Math.floor(this.x/(500/m.width)), Math.floor(this.y/(500/m.length)));
+        let pos = maze.checkForWall(Math.floor(this.x/(500/maze.width)), Math.floor(this.y/(500/maze.length)));
         if(pos === true) {
             this.y -= this.yVel;
             this.x -= this.xVel;

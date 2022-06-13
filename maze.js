@@ -90,10 +90,10 @@ var Maze = /** @class */ (function () {
         }
     };
     Maze.prototype.drawEverything = function () {
-        for (var x = 0; x < this.width; x++) {
-            for (var y = 0; y < this.length; y++) {
-                if (this.maze[y][x] == "wall") {
-                    ctx.drawImage(wallImage, x * canvas.width / m.width, y * canvas.height / m.length, canvas.width / m.width, canvas.height / m.length);
+        for (var x = 0; x < this.length; x++) {
+            for (var y = 0; y < this.width; y++) {
+                if (this.maze[x][y] == "wall") {
+                    ctx.drawImage(wallImage, x * canvas.width / maze.width, y * canvas.height / maze.length, canvas.width / maze.width, canvas.height / maze.length);
                 }
             }
         }
@@ -105,7 +105,3 @@ var Maze = /** @class */ (function () {
     };
     return Maze;
 }());
-var givenLength = 5;
-var givenWidth = 7;
-var m = new Maze(2 * givenLength + 1, 2 * givenWidth + 1);
-m.createMaze();
