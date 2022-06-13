@@ -1,7 +1,7 @@
 class Actor {
 
     x : number;
-    y : number;
+    y : number = 0;
 
     constructor(x: number, y : number) {
         this.x = x;
@@ -53,8 +53,8 @@ class Player extends Actor {
 
         if(this.x <= 500 && this.x >= 400 && this.y === 0) {
             this.stop()
-            window.alert("You won!! Now you can go back to the home screen :)");
-            stopwatch.stop()
+            window.alert("You finished the Maze! Now you can go back to the home screen :)");
+            stopwatch.halt()
             pauseDrawing()
             
         }
@@ -66,6 +66,7 @@ class Player extends Actor {
          if (this.y >= canvas.height) {
             this.yVel = -this.yVel;
         }
+        this.preventcrossing();
     }
 
     draw() : void {
@@ -78,6 +79,13 @@ class Player extends Actor {
         // ctx.fill();
     }
     
+    preventcrossing() : void {
+        let pos = maze.checkForWall(Math.floor(this.x/(500/maze.width)), Math.floor(this.y/(500/maze.length)));
+        if(pos === true) {
+            this.y -= this.yVel;
+            this.x -= this.xVel;
+        }
+    }
 
     stop() : void{
         this.xVel = 0;
