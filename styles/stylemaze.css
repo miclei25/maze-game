@@ -43,12 +43,13 @@ button {
     margin: 0 auto; 
     display: block; 
     padding: 10px; 
-    background-color: bisque;
+    background-color: #a47c64;
+    font-family: 'Skranji'; 
 
 }
 
 button:hover {
-    background-color: green;
+    background-color: #5C4033;
   }
 
 
