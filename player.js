@@ -1,6 +1,7 @@
 "use strict";
 class Actor {
     constructor(x, y) {
+        this.y = 0;
         this.x = x;
         this.y = y;
     }
@@ -36,8 +37,8 @@ class Player extends Actor {
         this.y += this.yVel;
         if (this.x <= 500 && this.x >= 400 && this.y === 0) {
             this.stop();
-            window.alert("You won!! Now you can go back to the home screen :)");
-            stopwatch.stop();
+            window.alert("You finished the Maze! Now you can go back to the home screen :)");
+            stopwatch.halt();
             pauseDrawing();
         }
         if (this.x >= canvas.width) {
@@ -46,6 +47,7 @@ class Player extends Actor {
         if (this.y >= canvas.height) {
             this.yVel = -this.yVel;
         }
+        this.preventcrossing();
     }
     draw() {
         ctx.beginPath();
@@ -55,6 +57,13 @@ class Player extends Actor {
         ctx.fillStyle = 'rgba (255, 0, 0, 1)';
         // ctx.rect(10, 10, 50, 50)
         // ctx.fill();
+    }
+    preventcrossing() {
+        let pos = maze.checkForWall(Math.floor(this.x / (500 / maze.width)), Math.floor(this.y / (500 / maze.length)));
+        if (pos === true) {
+            this.y -= this.yVel;
+            this.x -= this.xVel;
+        }
     }
     stop() {
         this.xVel = 0;

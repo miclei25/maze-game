@@ -24,12 +24,12 @@ class Maze {
         }
         this.maze[0][this.width - 2] = "EXIT";
         this.maze[this.length - 1][1] = "ENTER";
-        this.printEverything();
+        // this.printEverything()
         let toBeWall = true;
         let start = this.randomPoint(toBeWall);
         this.maze[start[0]][start[1]] = "wall";
         this.carvePassagesFrom(0, 0);
-        this.printEverything();
+        // this.printEverything()
     }
     carvePassagesFrom(cx, cy) {
         const N = 2;
@@ -83,23 +83,24 @@ class Maze {
         }
         return [x, y];
     }
-    printEverything() {
-        console.log("after everything:" + this.maze);
-        for (let x = 0; x < this.length; x++) {
-            console.log("each row after everything:" + this.maze[x]);
-        }
-    }
+    // printEverything() {
+    //     console.log("after everything:" + this.maze)
+    //     for (let x = 0; x < this.length; x++) {
+    //         console.log("each row after everything:" + this.maze[x]);
+    //     }
+    // }
     drawEverything() {
-        for (let x = 0; x < this.width; x++) {
-            for (let y = 0; y < this.length; y++) {
+        for (let y = 0; y < this.length; y++) {
+            for (let x = 0; x < this.width; x++) {
                 if (this.maze[y][x] == "wall") {
-                    ctx.drawImage(wallImage, x * canvas.width / m.width, y * canvas.height / m.length, canvas.width / m.width, canvas.height / m.length);
+                    ctx.drawImage(wallImage, x * (canvas.width / maze.width), y * (canvas.height / maze.length), canvas.width / maze.width, canvas.height / maze.length);
                 }
             }
         }
     }
+    checkForWall(x, y) {
+        if (this.maze[x][y] === 'wall') {
+            return true;
+        }
+    }
 }
-let givenLength = 5;
-let givenWidth = 7;
-let m = new Maze(2 * givenLength + 1, 2 * givenWidth + 1);
-m.createMaze();
