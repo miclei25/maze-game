@@ -1,5 +1,5 @@
 "use strict";
-console.log("Hi! This is our maze... it'll be here soon!");
+console.log("Hi! This is our this.maze... it'll be here soon!");
 class Maze {
     constructor(length, width) {
         this.length = length;
@@ -22,7 +22,7 @@ class Maze {
             this.maze[k][0] = "wall";
             this.maze[k][this.width - 1] = "wall";
         }
-        this.maze[0][this.width - 1] = "EXIT";
+        this.maze[0][this.width - 2] = "EXIT";
         this.maze[this.length - 1][0] = "ENTER";
         this.printEverything();
         let toBeWall = true;
@@ -84,28 +84,16 @@ class Maze {
         return [x, y];
     }
     printEverything() {
-        console.log("__".repeat(this.width));
+        console.log("after everything:" + this.maze);
         for (let x = 0; x < this.length; x++) {
-            let rowX = "";
-            for (let y = 0; y < this.width; y++) {
-                if (this.maze[x][y] == "wall") {
-                    rowX += "| ";
-                }
-                else {
-                    rowX += "__";
-                }
-            }
-            console.log(`${rowX}\n`);
+            console.log("each row after everything:" + this.maze[x]);
         }
     }
     drawEverything() {
-        for (let x = 0; x < this.length; x++) {
-            for (let y = 0; y < this.width; y++) {
-                if (this.maze[x][y] == "wall") {
-                    ctx.drawImage(wallImage, 0, 0, givenLength, givenWidth);
-                }
-                else {
-                    console.log("Not a wall");
+        for (let x = 0; x < this.width; x++) {
+            for (let y = 0; y < this.length; y++) {
+                if (this.maze[y][x] == "wall") {
+                    ctx.drawImage(wallImage, x * canvas.width / m.width, y * canvas.height / m.length, canvas.width / m.width, canvas.height / m.length);
                 }
             }
         }

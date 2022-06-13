@@ -30,7 +30,7 @@ class Maze {
             this.maze[k][this.width - 1] = "wall";
         }
 
-        this.maze[0][this.width - 1] = "EXIT";
+        this.maze[0][this.width - 2] = "EXIT";
         this.maze[this.length - 1][0] = "ENTER";
 
         this.printEverything()
@@ -103,10 +103,10 @@ class Maze {
     }
 
     drawEverything() {
-        for (let x = 0; x < this.length; x++) {
-            for (let y = 0; y < this.width; y++) {
-                if (this.maze[x][y] == "wall") {
-                    ctx.drawImage(wallImage, 0, 0, canvas.width/ m.width, canvas.height / m.length);
+        for (let x = 0; x < this.width; x++) {
+            for (let y = 0; y < this.length; y++) {
+                if (this.maze[y][x] == "wall") {
+                    ctx.drawImage(wallImage, x*canvas.width/ m.width, y*canvas.height / m.length, canvas.width/ m.width, canvas.height / m.length);
                 } 
             }
         }

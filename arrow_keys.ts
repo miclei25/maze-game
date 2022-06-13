@@ -28,6 +28,7 @@ function checkKey(e : KeyboardEvent) {
             start = true
             startstopwatch()
         }
+        
         // call moving function once it exists
     }
 }

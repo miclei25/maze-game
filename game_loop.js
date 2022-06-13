@@ -15,7 +15,7 @@ function draw() {
     // Clear the stage!
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(newImage, 0, 0, canvas.width, canvas.height);
-    ctx.drawImage(wallImage, 0, 0, canvas.width / m.width, canvas.height / m.length);
+    m.drawEverything();
     // Re-draw all the actors!
     for (const actor of actorList.actors) {
         actor.draw();
