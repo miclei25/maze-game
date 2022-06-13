@@ -14,8 +14,8 @@ wallImage.src = 'cobblestone.png';
 function draw() {
     // Clear the stage!
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(newImage, 0, 0, canvas.width / Maze.width, canvas.height / Maze.length);
-    ctx.drawImage(wallImage, 0, 0, canvas.width / Maze.width, canvas.height / Maze.length);
+    ctx.drawImage(newImage, 0, 0, canvas.width, canvas.height);
+    m.drawEverything();
     // Re-draw all the actors!
     for (const actor of actorList.actors) {
         actor.draw();
