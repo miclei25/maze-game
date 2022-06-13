@@ -34,8 +34,17 @@ class Player extends Actor {
     update() {
         this.x += this.xVel;
         this.y += this.yVel;
-        if (this.y > canvas.height + 50) {
-            actorList.removeActor(this);
+        if (this.y > canvas.height + 10) {
+            this.y = 10;
+        }
+        if (this.y < canvas.height - 10) {
+            this.y = canvas.height - 10;
+        }
+        if (this.x > canvas.height - 10) {
+            this.x = canvas.width - 10;
+        }
+        if (this.x < canvas.height + 10) {
+            this.x = canvas.width + 10;
         }
     }
     draw() {
