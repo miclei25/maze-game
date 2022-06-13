@@ -10,14 +10,24 @@ let drawIntervalId : number | undefined = window.setInterval(draw, FRAME_LENGTH)
 // let canvas = document.getElementById('canvas');
 // let ctx = canvas.getContext('2d');
 
-    let newImage = new Image();
-    newImage.src = 'grass.png'
+let newImage = new Image();
+newImage.src = 'grass.png'
+    
+let wallImage = new Image();
+wallImage.src = 'cobblestone.png'
 
 
 function draw(){
     // Clear the stage!
     ctx.clearRect(0,0,canvas.width, canvas.height);
+<<<<<<< HEAD
     ctx.drawImage(newImage,0, 0, 500, 500);
+
+    ctx.drawImage(wallImage,10,10,givenLength, givenWidth);
+=======
+    ctx.drawImage(newImage,0, 0, canvas.width / Maze.width, canvas.height / Maze.length);
+    ctx.drawImage(wallImage, 0, 0, canvas.width / Maze.width, canvas.height / Maze.length);
+>>>>>>> ee02059638d2f0bd19727453f23eb651ff3dacc9
 
     // Re-draw all the actors!
     for (const actor of actorList.actors){
