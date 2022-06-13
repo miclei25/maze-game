@@ -52,12 +52,23 @@ class Player extends Actor {
         this.y += this.yVel;
 
         if(this.x <= 500 && this.x >= 400 && this.y === 0) {
+            this.stop()
             window.alert("You won!! Now you can go back to the home screen :)");
             ctx.beginPath();
             ctx.rect(0,500,400,400);
             ctx.closePath();
             ctx.fill();
             ctx.fillStyle = 'rgba (0, 0 , 0)'   
+            pauseDrawing()
+            
+        }
+
+        if (this.x >= canvas.width) {
+            this.xVel = -this.xVel;
+        }
+    
+         if (this.y >= canvas.height) {
+            this.yVel = -this.yVel;
         }
         this.preventcrossing();
     }
@@ -83,4 +94,5 @@ class Player extends Actor {
     stop() : void{
         this.xVel = 0;
         this.yVel = 0;
-}}
+    }
+}
