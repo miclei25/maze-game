@@ -40,6 +40,22 @@ var Maze = /** @class */ (function () {
             var d = directions_1[_i];
             var nx = cx;
             var ny = cy;
+        // this.printEverything()
+        let toBeWall = true;
+        let start = this.randomPoint(toBeWall);
+        this.maze[start[0]][start[1]] = "wall";
+        this.carvePassagesFrom(0, 0);
+        // this.printEverything()
+    }
+    carvePassagesFrom(cx, cy) {
+        const N = 2;
+        const S = -2;
+        const E = 2;
+        const W = -2;
+        let directions = [N, S, E, W]; // algorithm to sort randomly if time
+        for (let d of directions) {
+            let nx = cx;
+            let ny = cy;
             if (d == E || d == W) {
                 nx += d;
             }
@@ -94,6 +110,18 @@ var Maze = /** @class */ (function () {
             for (var y = 0; y < this.width; y++) {
                 if (this.maze[x][y] == "wall") {
                     ctx.drawImage(wallImage, x * canvas.width / maze.width, y * canvas.height / maze.length, canvas.width / maze.width, canvas.height / maze.length);
+    }
+    // printEverything() {
+    //     console.log("after everything:" + this.maze)
+    //     for (let x = 0; x < this.length; x++) {
+    //         console.log("each row after everything:" + this.maze[x]);
+    //     }
+    // }
+    drawEverything() {
+        for (let y = 0; y < this.length; y++) {
+            for (let x = 0; x < this.width; x++) {
+                if (this.maze[y][x] == "wall") {
+                    ctx.drawImage(wallImage, x * (canvas.width / maze.width), y * (canvas.height / maze.length), canvas.width / maze.width, canvas.height / maze.length);
                 }
             }
         }
