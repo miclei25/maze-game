@@ -50,8 +50,14 @@ class Player extends Actor {
     update() : void {
         this.x += this.xVel;
         this.y += this.yVel;
-        if (this.y > canvas.height + 50){
-            actorList.removeActor(this);
+
+        if(this.x <= 500 && this.x >= 400 && this.y === 0) {
+            window.alert("You won!! Now you can go back to the home screen :)");
+            ctx.beginPath();
+            ctx.rect(0,500,400,400);
+            ctx.closePath();
+            ctx.fill();
+            ctx.fillStyle = 'rgba (0, 0 , 0)'
         }
     }
 
@@ -65,6 +71,7 @@ class Player extends Actor {
         // ctx.fill();
     }
     
+
     stop() : void{
         this.xVel = 0;
         this.yVel = 0;

@@ -1,4 +1,4 @@
-console.log("Hi! This is our maze... it'll be here soon!")
+console.log("Hi! This is our this.maze... it'll be here soon!")
 
 class Maze {
 
@@ -30,8 +30,8 @@ class Maze {
             this.maze[k][this.width - 1] = "wall";
         }
 
-        this.maze[0][this.width - 1] = "EXIT";
-        this.maze[this.length - 1][0] = "ENTER";
+        this.maze[0][this.width - 2] = "EXIT";
+        this.maze[this.length - 1][1] = "ENTER";
 
         this.printEverything()
         let toBeWall : boolean = true
@@ -96,21 +96,24 @@ class Maze {
     }
 
     printEverything() {
-        console.log("__".repeat(this.width));
+        console.log("after everything:" + this.maze)
         for (let x = 0; x < this.length; x++) {
-            let rowX : string = ""
-            for (let y = 0; y < this.width; y++) {
-                if (this.maze[x][y] == "wall") {
-                    rowX += "| ";
-                } else {
-                    rowX += "__";
-                }
+            console.log("each row after everything:" + this.maze[x]);
+        }
+    }
+
+    drawEverything() {
+        for (let x = 0; x < this.width; x++) {
+            for (let y = 0; y < this.length; y++) {
+                if (this.maze[y][x] == "wall") {
+                    ctx.drawImage(wallImage, x*canvas.width/ m.width, y*canvas.height / m.length, canvas.width/ m.width, canvas.height / m.length);
+                } 
             }
-            console.log(`${rowX}\n`);
         }
     }
 
 }
+
 
 let givenLength = 5;
 let givenWidth = 7;
