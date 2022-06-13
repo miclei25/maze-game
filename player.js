@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Actor = /** @class */ (function () {
     function Actor(x, y) {
+        this.y = 500;
         this.x = x;
         this.y = y;
     }
@@ -52,12 +53,17 @@ var Player = /** @class */ (function (_super) {
         this.x += this.xVel;
         this.y += this.yVel;
         if (this.x <= 500 && this.x >= 400 && this.y === 0) {
-            window.alert("You won slay");
-            /*ctx.beginPath();
-            ctx.rect(0,500,400,400);
+            window.alert("You won!! Now you can go back to the home screen :)");
+            ctx.beginPath();
+            ctx.rect(0, 500, 400, 400);
             ctx.closePath();
-            ctx.fill()
-            ctx.fillStyle = 'rgba (0, 0 , 0)' */
+            ctx.fill();
+            ctx.fillStyle = 'rgba (0, 0 , 0)';
+            Stopwatch;
+        }
+        if (m.maze[this.x][this.y] === 'wall') {
+            this.yVel -= 5;
+            this.xVel -= 5;
         }
     };
     Player.prototype.draw = function () {
@@ -68,6 +74,13 @@ var Player = /** @class */ (function (_super) {
         ctx.fillStyle = 'rgba (255, 0, 0, 1)';
         // ctx.rect(10, 10, 50, 50)
         // ctx.fill();
+    };
+    Player.prototype.preventcrossing = function () {
+        var pos = m.checkForWall(this.x, this.y);
+        if (pos === true) {
+            this.y -= this.yVel;
+            this.x -= this.xVel;
+        }
     };
     Player.prototype.stop = function () {
         this.xVel = 0;

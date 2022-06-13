@@ -1,7 +1,7 @@
 class Actor {
 
     x : number;
-    y : number;
+    y : number = 500;
 
     constructor(x: number, y : number) {
         this.x = x;
@@ -58,7 +58,10 @@ class Player extends Actor {
             ctx.closePath();
             ctx.fill();
             ctx.fillStyle = 'rgba (0, 0 , 0)'
+            Stopwatch
+            
         }
+        this.preventcrossing();
     }
 
     draw() : void {
@@ -71,6 +74,13 @@ class Player extends Actor {
         // ctx.fill();
     }
     
+    preventcrossing() : void {
+        let pos = m.checkForWall(this.x, this.y)
+        if (pos === true) {
+            this.y -= this.yVel;
+            this.x -= this.xVel;
+        }
+    }
 
     stop() : void{
         this.xVel = 0;
