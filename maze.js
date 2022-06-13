@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 console.log("Hi! This is our this.maze... it'll be here soon!");
 var Maze = /** @class */ (function () {
     function Maze(length, width) {
+=======
+"use strict";
+console.log("Hi! This is our this.maze... it'll be here soon!");
+class Maze {
+    constructor(length, width) {
+>>>>>>> 014b6214ff93114e74b1002141f44ebacf89214d
         this.length = length;
         this.width = width;
         this.maze = new Array(this.length);
@@ -21,8 +28,8 @@ var Maze = /** @class */ (function () {
             this.maze[k][0] = "wall";
             this.maze[k][this.width - 1] = "wall";
         }
-        this.maze[0][this.width - 1] = "EXIT";
-        this.maze[this.length - 1][0] = "ENTER";
+        this.maze[0][this.width - 2] = "EXIT";
+        this.maze[this.length - 1][1] = "ENTER";
         this.printEverything();
         var toBeWall = true;
         var start = this.randomPoint(toBeWall);
@@ -94,6 +101,18 @@ var Maze = /** @class */ (function () {
             for (var y = 0; y < this.width; y++) {
                 if (this.maze[x][y] == "wall") {
                     ctx.drawImage(wallImage, 0, 0, canvas.width / m.width, canvas.height / m.length);
+    }
+    printEverything() {
+        console.log("after everything:" + this.maze);
+        for (let x = 0; x < this.length; x++) {
+            console.log("each row after everything:" + this.maze[x]);
+        }
+    }
+    drawEverything() {
+        for (let x = 0; x < this.width; x++) {
+            for (let y = 0; y < this.length; y++) {
+                if (this.maze[y][x] == "wall") {
+                    ctx.drawImage(wallImage, x * canvas.width / m.width, y * canvas.height / m.length, canvas.width / m.width, canvas.height / m.length);
                 }
             }
         }

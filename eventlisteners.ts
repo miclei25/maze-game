@@ -1,6 +1,6 @@
 
 
-let player : Player = new Player(canvas.width / 2, canvas.height - 20);
+let player : Player = new Player(canvas.width / 9.7, canvas.height - 20);
 
 actorList.addActor(player)
 

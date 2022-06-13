@@ -16,40 +16,40 @@ var __extends = (this && this.__extends) || (function () {
 var Actor = /** @class */ (function () {
     function Actor(x, y) {
         this.y = 500;
+"use strict";
+class Actor {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
     }
-    Actor.prototype.draw = function () {
+    draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();
-    };
-    Actor.prototype.update = function () {
-    };
-    return Actor;
-}());
-var Player = /** @class */ (function (_super) {
-    __extends(Player, _super);
-    function Player(x, y) {
-        var _this = _super.call(this, x, y) || this;
-        _this.xVel = 0;
-        _this.yVel = 0;
-        return _this;
     }
-    Player.prototype.moveLeft = function () {
+    update() {
+    }
+}
+class Player extends Actor {
+    constructor(x, y) {
+        super(x, y);
+        this.xVel = 0;
+        this.yVel = 0;
+    }
+    moveLeft() {
         this.xVel = -5;
-    };
-    Player.prototype.moveRight = function () {
+    }
+    moveRight() {
         this.xVel = 5;
-    };
-    Player.prototype.moveUp = function () {
+    }
+    moveUp() {
         this.yVel = -5;
-    };
-    Player.prototype.moveDown = function () {
+    }
+    moveDown() {
         this.yVel = 5;
-    };
-    Player.prototype.update = function () {
+    }
+    update() {
         this.x += this.xVel;
         this.y += this.yVel;
         if (this.x <= 500 && this.x >= 400 && this.y === 0) {
@@ -59,14 +59,17 @@ var Player = /** @class */ (function (_super) {
             ctx.closePath();
             ctx.fill();
             ctx.fillStyle = 'rgba (0, 0 , 0)';
+<<<<<<< HEAD
             Stopwatch;
         }
         if (m.maze[this.x][this.y] === 'wall') {
             this.yVel -= 5;
             this.xVel -= 5;
+=======
+>>>>>>> 014b6214ff93114e74b1002141f44ebacf89214d
         }
-    };
-    Player.prototype.draw = function () {
+    }
+    draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
         ctx.closePath();
@@ -74,6 +77,7 @@ var Player = /** @class */ (function (_super) {
         ctx.fillStyle = 'rgba (255, 0, 0, 1)';
         // ctx.rect(10, 10, 50, 50)
         // ctx.fill();
+<<<<<<< HEAD
     };
     Player.prototype.preventcrossing = function () {
         var pos = m.checkForWall(this.x, this.y);
@@ -83,8 +87,11 @@ var Player = /** @class */ (function (_super) {
         }
     };
     Player.prototype.stop = function () {
+=======
+    }
+    stop() {
+>>>>>>> 014b6214ff93114e74b1002141f44ebacf89214d
         this.xVel = 0;
         this.yVel = 0;
-    };
-    return Player;
-}(Actor));
+    }
+}
