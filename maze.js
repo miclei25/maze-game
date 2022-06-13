@@ -98,6 +98,18 @@ class Maze {
             console.log(`${rowX}\n`);
         }
     }
+    drawEverything() {
+        for (let x = 0; x < this.length; x++) {
+            for (let y = 0; y < this.width; y++) {
+                if (this.maze[x][y] == "wall") {
+                    ctx.drawImage(wallImage, 0, 0, givenLength, givenWidth);
+                }
+                else {
+                    console.log("Not a wall");
+                }
+            }
+        }
+    }
 }
 let givenLength = 5;
 let givenWidth = 7;
