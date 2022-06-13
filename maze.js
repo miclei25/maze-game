@@ -22,8 +22,8 @@ class Maze {
             this.maze[k][0] = "wall";
             this.maze[k][this.width - 1] = "wall";
         }
-        this.maze[0][this.width - 1] = "EXIT";
-        this.maze[this.length - 1][0] = "ENTER";
+        this.maze[0][this.width - 2] = "EXIT";
+        this.maze[this.length - 1][1] = "ENTER";
         this.printEverything();
         let toBeWall = true;
         let start = this.randomPoint(toBeWall);
