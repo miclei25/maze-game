@@ -1,7 +1,7 @@
 //make into a function and call this function when one of the arrow keys are pressed
+const stopwatch = new Stopwatch();
 
 function startstopwatch() {
-    const stopwatch = new Stopwatch();
  
     stopwatch.start();
     
@@ -28,7 +28,7 @@ function checkKey(e : KeyboardEvent) {
             start = true
             startstopwatch()
         }
-        
+
         // call moving function once it exists
     }
 }

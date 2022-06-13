@@ -1,7 +1,7 @@
 "use strict";
 //make into a function and call this function when one of the arrow keys are pressed
+const stopwatch = new Stopwatch();
 function startstopwatch() {
-    const stopwatch = new Stopwatch();
     stopwatch.start();
     // (amount of time the stopwatch has been running)
 }
