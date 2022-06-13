@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-console.log("Hi! This is our this.maze... it'll be here soon!");
-var Maze = /** @class */ (function () {
-    function Maze(length, width) {
-=======
 "use strict";
 console.log("Hi! This is our this.maze... it'll be here soon!");
 class Maze {
     constructor(length, width) {
->>>>>>> cbf881d0bcde0b07a7bf1884058120caca0b41c4
         this.length = length;
         this.width = width;
         this.maze = new Array(this.length);
@@ -88,18 +82,6 @@ class Maze {
             }
         }
         return [x, y];
-<<<<<<< HEAD
-    };
-    Maze.prototype.printEverything = function () {
-        console.log("after everything:" + this.maze);
-        for (var x = 0; x < this.length; x++) {
-            console.log("each row after everything:" + this.maze[x]);
-        }
-    };
-    Maze.prototype.drawEverything = function () {
-        for (var x = 0; x < this.width; x++) {
-            for (var y = 0; y < this.length; y++) {
-=======
     }
     printEverything() {
         console.log("after everything:" + this.maze);
@@ -110,7 +92,6 @@ class Maze {
     drawEverything() {
         for (let x = 0; x < this.width; x++) {
             for (let y = 0; y < this.length; y++) {
->>>>>>> cbf881d0bcde0b07a7bf1884058120caca0b41c4
                 if (this.maze[y][x] == "wall") {
                     ctx.drawImage(wallImage, x * canvas.width / m.width, y * canvas.height / m.length, canvas.width / m.width, canvas.height / m.length);
                 }
