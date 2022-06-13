@@ -1,5 +1,5 @@
 "use strict";
-let player = new Player(canvas.width / 9.8, canvas.height - 20);
+let player = new Player(canvas.width / 9.7, canvas.height - 20);
 actorList.addActor(player);
 document.addEventListener("keydown", function (event) {
     event.preventDefault();
