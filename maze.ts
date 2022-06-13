@@ -113,7 +113,7 @@ class Maze {
     }
 
     checkForWall(x : number, y : number) {
-        if(this.maze[x ][y] === 'wall') {
+        if(this.maze[x][y] === 'wall') {
             return true;
         }
     }
