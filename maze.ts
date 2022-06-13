@@ -33,14 +33,14 @@ class Maze {
         this.maze[0][this.width - 2] = "EXIT";
         this.maze[this.length - 1][1] = "ENTER";
 
-        this.printEverything()
+        // this.printEverything()
         let toBeWall : boolean = true
 
         let start = this.randomPoint(toBeWall);
         this.maze[start[0]][start[1]] = "wall";
         this.carvePassagesFrom(0, 0)
 
-        this.printEverything()
+        // this.printEverything()
         }
 
     carvePassagesFrom(cx : number, cy : number) {
@@ -95,18 +95,21 @@ class Maze {
         return [x, y];
     }
 
-    printEverything() {
-        console.log("after everything:" + this.maze)
-        for (let x = 0; x < this.length; x++) {
-            console.log("each row after everything:" + this.maze[x]);
-        }
-    }
+    // printEverything() {
+    //     console.log("after everything:" + this.maze)
+    //     for (let x = 0; x < this.length; x++) {
+    //         console.log("each row after everything:" + this.maze[x]);
+    //     }
+    // }
 
     drawEverything() {
-        for (let x = 0; x < this.length; x++) {
-            for (let y = 0; y < this.width; y++) {
-                if (this.maze[x][y] == "wall") {
-                    ctx.drawImage(wallImage, x*canvas.width/ maze.width, y*canvas.height / maze.length, canvas.width/ maze.width, canvas.height / maze.length);
+        for (let y = 0; y < this.length; y++) {
+            for (let x = 0; x < this.width; x++) {
+                if (this.maze[y][x] == "wall") {
+                    ctx.drawImage(wallImage, x * (canvas.width / maze.width), 
+                                             y * (canvas.height / maze.length), 
+                                             canvas.width / maze.width, 
+                                             canvas.height / maze.length);
                 } 
             }
         }
