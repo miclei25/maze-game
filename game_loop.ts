@@ -28,7 +28,8 @@ draw();
 function draw(){
     // Clear the stage!
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(newImage, 0, 0, 100, 100);
+    ctx.drawImage(newImage, 100, 100, 100, 100);
+    ctx.drawImage(wallImage, 0, 0, 100, 100);
     maze.drawEverything();
     // ctx.drawImage(newImage, 0, 0, canvas.width / maze.width, canvas.height / maze.length);
     // ctx.drawImage(wallImage, 200, 200, canvas.width / maze.width, canvas.height / maze.length);
