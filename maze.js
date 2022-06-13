@@ -1,45 +1,52 @@
+<<<<<<< HEAD
+console.log("Hi! This is our this.maze... it'll be here soon!");
+var Maze = /** @class */ (function () {
+    function Maze(length, width) {
+=======
 "use strict";
 console.log("Hi! This is our this.maze... it'll be here soon!");
 class Maze {
     constructor(length, width) {
+>>>>>>> 014b6214ff93114e74b1002141f44ebacf89214d
         this.length = length;
         this.width = width;
         this.maze = new Array(this.length);
         ;
     }
-    createMaze() {
+    Maze.prototype.createMaze = function () {
         // creates initial array - first just rows, then makes each of the rows full of columns
-        for (let n = 0; n < this.length; n++) {
+        for (var n = 0; n < this.length; n++) {
             this.maze[n] = new Array(this.width);
         }
         // makes the first and last rows walls
-        for (let k = 0; k < this.width; k++) {
+        for (var k = 0; k < this.width; k++) {
             this.maze[0][k] = "wall";
             this.maze[this.length - 1][k] = "wall";
         }
         // makes the first and last columns walls
-        for (let k = 1; k < this.length - 1; k += 1) {
+        for (var k = 1; k < this.length - 1; k += 1) {
             this.maze[k][0] = "wall";
             this.maze[k][this.width - 1] = "wall";
         }
         this.maze[0][this.width - 2] = "EXIT";
         this.maze[this.length - 1][1] = "ENTER";
         this.printEverything();
-        let toBeWall = true;
-        let start = this.randomPoint(toBeWall);
+        var toBeWall = true;
+        var start = this.randomPoint(toBeWall);
         this.maze[start[0]][start[1]] = "wall";
         this.carvePassagesFrom(0, 0);
         this.printEverything();
-    }
-    carvePassagesFrom(cx, cy) {
-        const N = 2;
-        const S = -2;
-        const E = 2;
-        const W = -2;
-        let directions = [N, S, E, W]; // algorithm to sort randomly if time
-        for (let d of directions) {
-            let nx = cx;
-            let ny = cy;
+    };
+    Maze.prototype.carvePassagesFrom = function (cx, cy) {
+        var N = 2;
+        var S = -2;
+        var E = 2;
+        var W = -2;
+        var directions = [N, S, E, W]; // algorithm to sort randomly if time
+        for (var _i = 0, directions_1 = directions; _i < directions_1.length; _i++) {
+            var d = directions_1[_i];
+            var nx = cx;
+            var ny = cy;
             if (d == E || d == W) {
                 nx += d;
             }
@@ -63,10 +70,10 @@ class Maze {
                 this.carvePassagesFrom(nx, ny);
             }
         }
-    }
-    randomPoint(toBeWall) {
-        let x = Math.floor(Math.random() * (this.width - 2) + 1);
-        let y = Math.floor(Math.random() * (this.length - 2) + 1);
+    };
+    Maze.prototype.randomPoint = function (toBeWall) {
+        var x = Math.floor(Math.random() * (this.width - 2) + 1);
+        var y = Math.floor(Math.random() * (this.length - 2) + 1);
         if (toBeWall) {
             if (x % 2 == 0) {
                 x = (x - 2) / 2;
@@ -82,6 +89,18 @@ class Maze {
             }
         }
         return [x, y];
+    };
+    Maze.prototype.printEverything = function () {
+        console.log("after everything:" + this.maze);
+        for (var x = 0; x < this.length; x++) {
+            console.log("each row after everything:" + this.maze[x]);
+        }
+    };
+    Maze.prototype.drawEverything = function () {
+        for (var x = 0; x < this.length; x++) {
+            for (var y = 0; y < this.width; y++) {
+                if (this.maze[x][y] == "wall") {
+                    ctx.drawImage(wallImage, 0, 0, canvas.width / m.width, canvas.height / m.length);
     }
     printEverything() {
         console.log("after everything:" + this.maze);
@@ -97,9 +116,15 @@ class Maze {
                 }
             }
         }
-    }
-}
-let givenLength = 5;
-let givenWidth = 7;
-let m = new Maze(2 * givenLength + 1, 2 * givenWidth + 1);
+    };
+    Maze.prototype.checkForWall = function (x, y) {
+        if (this.maze[x][y] === 'wall') {
+            return true;
+        }
+    };
+    return Maze;
+}());
+var givenLength = 5;
+var givenWidth = 7;
+var m = new Maze(2 * givenLength + 1, 2 * givenWidth + 1);
 m.createMaze();

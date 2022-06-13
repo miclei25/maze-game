@@ -1,7 +1,7 @@
 class Actor {
 
     x : number;
-    y : number;
+    y : number = 500;
 
     constructor(x: number, y : number) {
         this.x = x;
@@ -66,6 +66,7 @@ class Player extends Actor {
          if (this.y >= canvas.height) {
             this.yVel = -this.yVel;
         }
+        this.preventcrossing();
     }
 
     draw() : void {
@@ -78,6 +79,13 @@ class Player extends Actor {
         // ctx.fill();
     }
     
+    preventcrossing() : void {
+        let pos = m.checkForWall(this.x, this.y)
+        if (pos === true) {
+            this.y -= this.yVel;
+            this.x -= this.xVel;
+        }
+    }
 
     stop() : void{
         this.xVel = 0;
