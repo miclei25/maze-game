@@ -23,11 +23,14 @@ class Walls {
 
     draw() {
         ctx.beginPath();
+        ctx.strokeStyle = "black";
         ctx.lineWidth = 10;
         for (const wall of this.walls) {
             ctx.moveTo(wall.start_point.x, wall.start_point.y);
             ctx.lineTo(wall.end_point.x, wall.end_point.y)
+            
         }
+        ctx.stroke();
         ctx.closePath();
     }
 }
