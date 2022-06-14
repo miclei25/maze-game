@@ -11,28 +11,32 @@ class Player {
         this.yVel = 0;
     }
     moveLeft() {
-        this.xVel = -(canvas.width / maze.width);
+        // this.xVel = - (canvas.width / maze.width);
+        this.xVel = -5;
         // let horiz = true;
         // let c = maze.checkCoordinates(horiz);
         left = true;
         maze.update(left, right, up, down);
     }
     moveRight() {
-        this.xVel = canvas.width / maze.width;
+        // this.xVel = canvas.width / maze.width;
+        this.xVel = 5;
         // let horiz = true;
         // let c = maze.checkCoordinates(horiz);
         right = true;
         maze.update(left, right, up, down);
     }
     moveUp() {
-        this.yVel = -(canvas.height / maze.length);
+        // this.yVel = - (canvas.height / maze.length);
+        this.yVel = 5;
         // let horiz = false;
         // let c = maze.checkCoordinates(horiz);
         up = true;
         maze.update(left, right, up, down);
     }
     moveDown() {
-        this.yVel = canvas.height / maze.length;
+        // this.yVel = canvas.height / maze.length;
+        this.yVel = -5;
         // let horiz = false;
         // let c = maze.checkCoordinates(horiz);
         down = true;

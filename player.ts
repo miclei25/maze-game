@@ -17,7 +17,8 @@ class Player {
     }
 
     moveLeft() : void {
-        this.xVel = - (canvas.width / maze.width);
+        // this.xVel = - (canvas.width / maze.width);
+        this.xVel = - 5;
         // let horiz = true;
         // let c = maze.checkCoordinates(horiz);
         left = true;
@@ -25,7 +26,9 @@ class Player {
     }
 
     moveRight() : void {
-        this.xVel = canvas.width / maze.width;
+        // this.xVel = canvas.width / maze.width;
+        this.xVel = 5;
+
         // let horiz = true;
         // let c = maze.checkCoordinates(horiz);
         right = true;
@@ -33,7 +36,9 @@ class Player {
     }
 
     moveUp() : void {
-        this.yVel = - (canvas.height / maze.length);
+        // this.yVel = - (canvas.height / maze.length);
+        this.yVel = 5;
+
         // let horiz = false;
         // let c = maze.checkCoordinates(horiz);
         up = true;
@@ -41,7 +46,9 @@ class Player {
     }
 
     moveDown() : void {
-        this.yVel = canvas.height / maze.length;
+        // this.yVel = canvas.height / maze.length;
+        this.yVel = - 5;
+
         // let horiz = false;
         // let c = maze.checkCoordinates(horiz);
         down = true;
