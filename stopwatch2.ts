@@ -38,7 +38,7 @@ class Stopwatch {
     }, 95)
   }
 
-  stop(){
+  halt(){
     this.endTime = Date.now();
     clearInterval(this.savedInterval)
   }

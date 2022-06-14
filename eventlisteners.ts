@@ -1,9 +1,3 @@
-
-
-let player : Player = new Player(canvas.width / 9.7, canvas.height - 20);
-
-actorList.addActor(player)
-
 document.addEventListener("keydown", function(event: KeyboardEvent){
     event.preventDefault();
     if (event.key === "ArrowLeft")
