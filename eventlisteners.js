@@ -21,3 +21,22 @@ document.addEventListener("keyup", (event) => {
     if (event.key === "ArrowDown")
         player.stop();
 });
+//make into a function and call this function when one of the arrow keys are pressed
+const stopwatch = new Stopwatch();
+function startstopwatch() {
+    stopwatch.start();
+    // (amount of time the stopwatch has been running)
+}
+let start = false;
+document.onkeydown = checkKey;
+function checkKey(e) {
+    e = e || window.event;
+    if (start === false) {
+        // if (e.keyCode == '37' || e.keyCode == '38' || e.keyCode == '39' || e.keyCode == '40') {
+        if (e.key == 'ArrowLeft' || e.key == 'ArrowUp' || e.key == 'ArrowRight' || e.key == 'ArrowDown') {
+            start = true;
+            startstopwatch();
+        }
+        // call moving function once it exists
+    }
+}
