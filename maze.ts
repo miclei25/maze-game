@@ -36,10 +36,10 @@ class Maze {
         // this.printEverything()
         let toBeWall : boolean = true
 
-        for (let amt = 0; amt <= (this.maze.length * this.maze[0].length) / 4; amt++) {
-            let start = this.randomPoint(toBeWall);
-            this.maze[start[0]][start[1]] = "wall";
-        }
+        // for (let amt = 0; amt <= (this.maze.length * this.maze[0].length) / 4; amt++) {
+        //     let start = this.randomPoint(toBeWall);
+        //     this.maze[start[0]][start[1]] = "wall";
+        // }
         //this.carvePassagesFrom(0, 0)
 
         // this.printEverything()
@@ -121,6 +121,35 @@ class Maze {
         if(this.maze[x][y] === 'wall') {
             return true;
         }
+    }
+
+    hardcodeWalls() {
+        this.maze[1][4] = "wall";
+        this.maze[2][4] = "wall";
+        this.maze[2][6] = "wall";
+        this.maze[2][7] = "wall";
+        this.maze[2][8] = "wall";
+        this.maze[3][2] = "wall";
+        this.maze[3][4] = "wall";
+        this.maze[3][5] = "wall";
+        this.maze[3][6] = "wall";
+        this.maze[3][8] = "wall";
+        this.maze[4][2] = "wall";
+        this.maze[4][8] = "wall";
+        this.maze[5][2] = "wall";
+        this.maze[5][5] = "wall";
+        this.maze[5][6] = "wall";
+        this.maze[5][8] = "wall";
+        this.maze[6][1] = "wall";
+        this.maze[6][2] = "wall";
+        this.maze[6][3] = "wall";
+        this.maze[6][6] = "wall";
+        this.maze[6][8] = "wall";
+        this.maze[7][3] = "wall";
+        this.maze[7][6] = "wall";
+        this.maze[8][3] = "wall";
+        this.maze[8][6] = "wall";
+        this.maze[8][7] = "wall";
     }
 
 }

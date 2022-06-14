@@ -12,7 +12,7 @@ wallImage.src = 'images/cobblestone.png'
 
 // these two are both hardcoded rn - but we should make an input box or something where the player can input
 let givenLength = 5;
-let givenWidth = 7;
+let givenWidth = 5;
 
 let maze : Maze = new Maze(2 * givenLength + 1, 2 * givenWidth + 1);
 maze.createMaze();
@@ -23,7 +23,8 @@ function draw(){
     // Clear the stage!
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(newImage, 0, 0, 500, 500);
-    ctx.drawImage(wallImage, 0, 0, 100, 100);
+    // ctx.drawImage(wallImage, 0, 0, 100, 100);
+    maze.hardcodeWalls();
     maze.drawEverything();
     // ctx.drawImage(newImage, 0, 0, canvas.width / maze.width, canvas.height / maze.length);
     // ctx.drawImage(wallImage, 200, 200, canvas.width / maze.width, canvas.height / maze.length);
