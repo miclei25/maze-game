@@ -16,11 +16,7 @@ draw();
 function draw() {
     // Clear the stage!
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-<<<<<<< HEAD
     ctx.drawImage(newImage, 0, 0, 500, 500);
-=======
-    ctx.drawImage(newImage, 100, 100, 100, 100);
->>>>>>> 5a29f1b65a0e3758441dc71b1440a088acbfd8d1
     ctx.drawImage(wallImage, 0, 0, 100, 100);
     maze.drawEverything();
     // ctx.drawImage(newImage, 0, 0, canvas.width / maze.width, canvas.height / maze.length);
@@ -38,5 +34,3 @@ function continueDrawing() {
     if (drawIntervalId === undefined)
         drawIntervalId = window.setInterval(draw, FRAME_LENGTH);
 }
-// (document.querySelector("#pause") as HTMLElement).addEventListener("click",pauseDrawing);
-// (document.querySelector("#continue") as HTMLElement).addEventListener("click",continueDrawing);

@@ -26,9 +26,11 @@ class Maze {
         this.maze[this.length - 1][1] = "ENTER";
         // this.printEverything()
         let toBeWall = true;
-        let start = this.randomPoint(toBeWall);
-        this.maze[start[0]][start[1]] = "wall";
-        this.carvePassagesFrom(0, 0);
+        for (let amt = 0; amt <= (this.maze.length * this.maze[0].length) / 4; amt++) {
+            let start = this.randomPoint(toBeWall);
+            this.maze[start[0]][start[1]] = "wall";
+        }
+        //this.carvePassagesFrom(0, 0)
         // this.printEverything()
     }
     carvePassagesFrom(cx, cy) {
@@ -46,7 +48,7 @@ class Maze {
             else {
                 ny += d;
             }
-            if (ny > 0 && ny < this.length - 1 && nx > 0 && nx < this.length && this.maze[nx][ny] !== "wall") {
+            if (ny > 0 && ny < this.length - 1 && nx > 0 && nx < this.width - 1 && this.maze[nx][ny] !== "wall") {
                 this.maze[cy][cx] |= d;
                 if (d == N) {
                     this.maze[ny][nx] |= S;

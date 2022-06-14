@@ -43,6 +43,3 @@ function continueDrawing(){
     if (drawIntervalId === undefined)
         drawIntervalId = window.setInterval(draw, FRAME_LENGTH);
 }
-
-// (document.querySelector("#pause") as HTMLElement).addEventListener("click",pauseDrawing);
-// (document.querySelector("#continue") as HTMLElement).addEventListener("click",continueDrawing);
