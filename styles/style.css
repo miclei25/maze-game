@@ -1,5 +1,5 @@
 html {
-    background-color: #99a74c;
+    background-image: url('../Images/purpleclouds.gif');
     font-family: 'Skranji', cursive;
     
 }
@@ -12,12 +12,12 @@ p {
     line-height: 2;
     letter-spacing: 1px;
     text-align: center;
-    color: #35461b
+    color: #433675
 }
 h1 {
     text-align: center;
     font-size: 125px;
-    color:#35461b;
+    color:#724fb3;
     -webkit-text-stroke: 1px black;
 
 
@@ -25,7 +25,7 @@ h1 {
 
 h2{ 
     text-align: center;
-    color:#35461b; 
+    color:#6f46a1; 
     -webkit-text-stroke: 1px black;
 
 }
@@ -39,10 +39,10 @@ button {
     display: block; 
     padding: 10px; 
     font-family: 'Skranji', cursive;
-    background-color: #a47c64;
+    background-color: #6478a4;
 
 }
 
 button:hover { 
-    background-color: 	#5C4033;
+    background-color: 	#575699;
 }
