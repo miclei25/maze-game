@@ -1,32 +1,13 @@
-class Actor {
-
-    x : number;
-    y : number = 0;
-
-    constructor(x: number, y : number) {
-        this.x = x;
-        this.y = y;
-    }
-
-    draw() : void {
-        ctx.beginPath();
-        ctx.arc(this.x,this.y,10, 0 , Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
-    }
-
-    update() : void {
-
-    }
-}
-
-class Player extends Actor {
+class Player {
     
+    x : number;
+    y : number;
     xVel : number;
     yVel : number;
 
     constructor(x : number, y : number) {
-        super(x,y);
+        this.x = x;
+        this.y = y;
         this.xVel = 0;
         this.yVel = 0;
     }
@@ -52,10 +33,10 @@ class Player extends Actor {
         this.y += this.yVel;
 
         if(this.x <= 500 && this.x >= 400 && this.y === 0) {
-            this.stop()
+            this.stop();
             window.alert("You finished the Maze! Now you can go back to the home screen :)");
-            stopwatch.halt()
-            pauseDrawing()
+            stopwatch.halt();
+            pauseDrawing();
             
         }
 
@@ -74,7 +55,7 @@ class Player extends Actor {
         ctx.arc(this.x,this.y,10, 0 , Math.PI * 2);
         ctx.closePath();
         ctx.fill();
-        ctx.fillStyle = 'rgba (255, 0, 0, 1)'
+        ctx.fillStyle = 'rgba (255, 0, 0, 1)';
         // ctx.rect(10, 10, 50, 50)
         // ctx.fill();
     }
