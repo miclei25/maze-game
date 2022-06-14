@@ -126,6 +126,7 @@ class Maze {
         this.maze[6][2] = "wall";
         this.maze[6][3] = "wall";
         this.maze[6][6] = "wall";
+        this.maze[6][8] = "wall";
         this.maze[7][3] = "wall";
         this.maze[7][6] = "wall";
         this.maze[8][3] = "wall";
