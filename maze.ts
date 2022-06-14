@@ -112,19 +112,20 @@ class Maze {
                                              y * (canvas.height / maze.length), 
                                              canvas.width / maze.width, 
                                              canvas.height / maze.length);
-                } 
+                }
             }
         }
     }
 
-    checkForWall(x : number, y : number) {
-        if(this.maze[x][y] === 'wall') {
-            return true;
-        }
-    }
+    // checkForWall(x : number, y : number) {
+    //     if(this.maze[x][y] === 'wall') {
+    //         return true;
+    //     }
+    // }
 
     hardcodeWalls() {
         this.maze[1][4] = "wall";
+        this.maze[2][2] = "wall";
         this.maze[2][4] = "wall";
         this.maze[2][6] = "wall";
         this.maze[2][7] = "wall";
@@ -150,6 +151,39 @@ class Maze {
         this.maze[8][3] = "wall";
         this.maze[8][6] = "wall";
         this.maze[8][7] = "wall";
+        this.maze[10][1] = "player";
+    }
+
+    // checkCoordinates(horiz : boolean) {
+    //     for (let y = 0; y < maze.length; y++) {
+    //         for (let x = 0; x < maze.width; x++) {
+    //             if (this.maze[y][x] == "player") {
+    //                 if (horiz) {
+    //                     return x;
+    //                 } else {
+    //                     return y;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    update(left : boolean, right : boolean, up : boolean, down : boolean) {
+        for (let y = 0; y < maze.length; y++) {
+            for (let x = 0; x < maze.width; x++) {
+                if (this.maze[y][x] == "player") {
+                    if (left) {
+                        this.maze[0][x - 1] = "player";
+                    } else if (right) {
+                        this.maze[0][x + 1] = "player";
+                    } else if (up) {
+                        this.maze[x + 1][0] = "player";
+                    } else if (down) {
+                        this.maze[x - 1][0] = "player";
+                    }
+                }
+            }
+        }
     }
 
 }

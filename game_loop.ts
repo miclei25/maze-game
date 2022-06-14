@@ -18,7 +18,6 @@ let maze : Maze = new Maze(2 * givenLength + 1, 2 * givenWidth + 1);
 maze.createMaze();
 draw();
 
-
 function draw(){
     // Clear the stage!
     ctx.clearRect(0, 0, canvas.width, canvas.height);

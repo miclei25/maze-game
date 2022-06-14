@@ -1,3 +1,7 @@
+let left : boolean;
+let right : boolean;
+let up : boolean;
+let down : boolean;
 class Player {
     
     x : number;
@@ -13,19 +17,35 @@ class Player {
     }
 
     moveLeft() : void {
-        this.xVel = -5;
+        this.xVel = - (canvas.width / maze.width);
+        // let horiz = true;
+        // let c = maze.checkCoordinates(horiz);
+        left = true;
+        maze.update(left, right, up, down);
     }
 
     moveRight() : void {
-        this.xVel = 5;
+        this.xVel = canvas.width / maze.width;
+        // let horiz = true;
+        // let c = maze.checkCoordinates(horiz);
+        right = true;
+        maze.update(left, right, up, down);
     }
 
     moveUp() : void {
-        this.yVel = -5;
+        this.yVel = - (canvas.height / maze.length);
+        // let horiz = false;
+        // let c = maze.checkCoordinates(horiz);
+        up = true;
+        maze.update(left, right, up, down);
     }
 
     moveDown() : void {
-        this.yVel = 5;
+        this.yVel = canvas.height / maze.length;
+        // let horiz = false;
+        // let c = maze.checkCoordinates(horiz);
+        down = true;
+        maze.update(left, right, up, down);
     }
 
     update() : void {
@@ -47,7 +67,7 @@ class Player {
          if (this.y >= canvas.height) {
             this.yVel = -this.yVel;
         }
-        this.preventcrossing();
+        // this.preventcrossing();
     }
 
     draw() : void {
@@ -60,13 +80,13 @@ class Player {
         // ctx.fill();
     }
     
-    preventcrossing() : void {
-        let pos = maze.checkForWall(Math.floor(this.x/(500/maze.width)), Math.floor(this.y/(500/maze.length)));
-        if(pos === true) {
-            this.y -= this.yVel;
-            this.x -= this.xVel;
-        }
-    }
+    // preventcrossing() : void {
+    //     let pos = maze.checkForWall(Math.floor(this.x/(500/maze.width)), Math.floor(this.y/(500/maze.length)));
+    //     if(pos === true) {
+    //         this.y -= this.yVel;
+    //         this.x -= this.xVel;
+    //     }
+    // }
 
     stop() : void{
         this.xVel = 0;
