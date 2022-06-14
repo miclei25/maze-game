@@ -1,9 +1,3 @@
-const canvas = document.querySelector("canvas") as HTMLCanvasElement;
-const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
-
-const FRAME_LENGTH = 30
-const actorList = new ActorList();
-
 //Draw ~ 30 times a second
 let drawIntervalId : number | undefined = window.setInterval(draw, FRAME_LENGTH);
 
@@ -34,14 +28,14 @@ function draw(){
     // ctx.drawImage(newImage, 0, 0, canvas.width / maze.width, canvas.height / maze.length);
     // ctx.drawImage(wallImage, 200, 200, canvas.width / maze.width, canvas.height / maze.length);
     // Re-draw all the actors!
-    for (const actor of actorList.actors){
-        actor.draw();
-    }
+    // for (const actor of actorList.actors){
+    //     actor.draw();
+    // }
 
-    //Update all actors
-    for (const actor of actorList.actors){
-        actor.update();
-    }
+    // //Update all actors
+    // for (const actor of actorList.actors){
+    //     actor.update();
+    // }
 }
 
 // Functions to control (pause/continue) the game loop.
@@ -57,5 +51,5 @@ function continueDrawing(){
         drawIntervalId = window.setInterval(draw, FRAME_LENGTH);
 }
 
-(document.querySelector("#pause") as HTMLElement).addEventListener("click",pauseDrawing);
-(document.querySelector("#continue") as HTMLElement).addEventListener("click",continueDrawing);
+// (document.querySelector("#pause") as HTMLElement).addEventListener("click",pauseDrawing);
+// (document.querySelector("#continue") as HTMLElement).addEventListener("click",continueDrawing);
