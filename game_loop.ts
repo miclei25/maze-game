@@ -27,15 +27,8 @@ function draw(){
     maze.drawEverything();
     // ctx.drawImage(newImage, 0, 0, canvas.width / maze.width, canvas.height / maze.length);
     // ctx.drawImage(wallImage, 200, 200, canvas.width / maze.width, canvas.height / maze.length);
-    // Re-draw all the actors!
-    // for (const actor of actorList.actors){
-    //     actor.draw();
-    // }
-
-    // //Update all actors
-    // for (const actor of actorList.actors){
-    //     actor.update();
-    // }
+    player.draw();
+    player.update();
 }
 
 // Functions to control (pause/continue) the game loop.

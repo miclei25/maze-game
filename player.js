@@ -1,22 +1,8 @@
 "use strict";
-class Actor {
+class Player {
     constructor(x, y) {
-        this.y = 0;
         this.x = x;
         this.y = y;
-    }
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
-    }
-    update() {
-    }
-}
-class Player extends Actor {
-    constructor(x, y) {
-        super(x, y);
         this.xVel = 0;
         this.yVel = 0;
     }
